@@ -24,6 +24,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Grid System
 # Typography
 # Elements
 # Forms
@@ -262,6 +263,97 @@ td,
 th {
 	padding: 0;
 }
+
+
+/*--------------------------------------------------------------
+# Grid System
+--------------------------------------------------------------*/
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-cell {
+    flex: 1;
+}
+
+.grid-top {
+    align-items: flex-start;
+}
+
+.grid-bottom {
+    align-items: flex-end;
+}
+
+.grid-center {
+    align-items: center;
+}
+
+.grid-justify-center {
+    justify-content: center;
+}
+
+.grid-cell-top {
+    align-self: flex-start;
+}
+
+.grid-cell-bottom {
+    align-self: flex-end;
+}
+
+.grid-cell-center {
+    align-self: center;
+}
+
+.grid-cell-auto-size {
+    flex: none;
+}
+
+.grid-fit > .grid-cell {
+    flex: 1;
+}
+
+.grid-1-1 > .grid-cell {
+    flex: 0 0 100%;
+}
+
+.grid-1-2 > .grid-cell {
+    flex: 0 0 50%;
+}
+
+.grid-1-3 > .grid-cell {
+    flex: 0 0 33.3333%;
+}
+
+.grid-1-4 > .grid-cell {
+    flex: 0 0 25%;
+}
+
+/* With Gutters */
+.grid-gutters {
+    margin: -1em 0 1em -1em;
+}
+.grid-gutters > .grid-cell {
+    padding: 1em 0 0 1em;
+}
+
+.grid-gutters-l {
+    margin: -1.5em 0 1.5em -1.5em;
+}
+.grid-gutters-l > .grid-cell {
+    padding: 1.5em 0 0 1.5em;
+}
+
+.grid-gutters-xl {
+    margin: -2em 0 2em -2em;
+}
+.grid-gutters-xl > .grid-cell {
+    padding: 2em 0 0 2em;
+}
+
 
 /*--------------------------------------------------------------
 # Typography
