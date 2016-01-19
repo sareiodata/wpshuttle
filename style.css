@@ -27,6 +27,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Grid System
 # Typography
 # Elements
+# Layouts
 # Forms
 # Navigation
 	## Links
@@ -507,6 +508,49 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+.site-content {
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5%;
+}
+
+@media all and ( min-width : 55em ) {
+
+    body.boxed .site-content,
+    body.boxed-sidebar-left .site-content,
+    body.boxed-sidebar-right .site-content {
+        max-width: 1020px;
+    }
+
+    body.boxed-sidebar-left #primary {
+        width: 65%;
+        float: left;
+        margin-left: 35%;
+    }
+    body.boxed-sidebar-left #secondary {
+        width: 30%;
+        float: left;
+        margin-left: -100%;
+    }
+
+    body.boxed-sidebar-right #primary {
+        width: 65%;
+        float: left;
+        margin-right: -100%;
+    }
+    body.boxed-sidebar-right #secondary {
+        width: 30%;
+        float: left;
+        margin-left: 70%;
+    }
+
+}
+
 
 /*--------------------------------------------------------------
 # Forms
