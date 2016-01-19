@@ -65,7 +65,7 @@ function wpshuttle_get_post_page_template() {
     // Get page template
     $page_template = get_post_meta( $post->ID, 'wpshuttle_page_template', true );
 
-    return ( !empty( $page_template ) ? $page_template : 1 );
+    return ( !empty( $page_template ) ? $page_template : 3 );
 
 }
 
