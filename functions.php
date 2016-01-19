@@ -109,6 +109,14 @@ function wpshuttle_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpshuttle_scripts' );
 
+
+function wpshuttle_admin_scripts() {
+
+    wp_enqueue_style( 'wpshuttle_admin', get_template_directory_uri() . '/css/style-admin.css' );
+
+}
+add_action( 'admin_enqueue_scripts', 'wpshuttle_admin_scripts' );
+
 /**
  * Implement the Custom Header feature.
  */
@@ -133,3 +141,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load page templates
+ */
+require get_template_directory() . '/inc/page-templates.php';
