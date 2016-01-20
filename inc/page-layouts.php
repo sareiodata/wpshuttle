@@ -34,7 +34,7 @@ function wpshuttle_get_page_layouts() {
 }
 
 
-/*
+/**
  * Add layouts classes to the body
  *
  */
@@ -51,7 +51,7 @@ function wpshuttle_page_layout_body_class( $classes ) {
 add_filter( 'body_class', 'wpshuttle_page_layout_body_class' );
 
 
-/*
+/**
  * Return the saved page layout for the current post
  *
  */
@@ -65,7 +65,7 @@ function wpshuttle_get_post_page_layout() {
     // Get page layout
     $page_layout = get_post_meta( $post->ID, 'wpshuttle_page_layout', true );
 
-    return ( isset( $page_layout ) ? $page_layout : 3 );
+    return ( isset( $page_layout ) && $page_layout != '' ? $page_layout : 2 );
 
 }
 
