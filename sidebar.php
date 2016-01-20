@@ -10,6 +10,9 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+if( ! wpshuttle_is_displayable_sidebar() )
+    return;
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">

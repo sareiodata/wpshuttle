@@ -94,6 +94,23 @@ function wpshuttle_widgets_init() {
 add_action( 'widgets_init', 'wpshuttle_widgets_init' );
 
 /**
+ * Check whether or not to display the sidebar
+ *
+ * @return bool
+ *
+ */
+function wpshuttle_is_displayable_sidebar() {
+
+    $page_layout = wpshuttle_get_post_page_layout();
+
+    $layouts_with_sidebar = array( 2, 3 );
+
+    return ( in_array( $page_layout, $layouts_with_sidebar ) ? true : false );
+
+}
+
+
+/**
  * Enqueue scripts and styles.
  */
 function wpshuttle_scripts() {
@@ -109,7 +126,9 @@ function wpshuttle_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpshuttle_scripts' );
 
-
+/**
+ * Enqueue admin scripts and styles
+ */
 function wpshuttle_admin_scripts() {
 
     wp_enqueue_style( 'wpshuttle_admin', get_template_directory_uri() . '/css/style-admin.css' );
