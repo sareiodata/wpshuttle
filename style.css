@@ -32,6 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Navigation
 	## Links
 	## Menus
+	## Site Footer
 # Accessibility
 # Alignments
 # Clearings
@@ -910,7 +911,15 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
-
+/*--------------------------------------------------------------
+# Site Footer
+--------------------------------------------------------------*/
+.site-footer{
+	padding: 1.75rem 5%;
+	margin-top: 1.75rem;
+	border-top: 1px solid #c1c1c1;
+	text-align: center;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1023,6 +1032,16 @@ a:active {
 	 margin-top:0;
 	 margin-bottom: 1.05em;
  }
+
+.entry-title a{
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+.entry-title a:hover{
+	color: #007acc;
+	text-decoration: none;
+}
 
 .entry-content,
 .entry-summary {
@@ -1168,7 +1187,7 @@ blockquote.alignright{
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 7em;
 }
 
 .byline,
