@@ -1,9 +1,9 @@
-.wpshuttle-page-template {
+.wpshuttle-page-layout {
     position: relative;
     display: inline-block;
     margin: 0 3px;
 }
-.wpshuttle-page-template label {
+.wpshuttle-page-layout label {
     display: block;
     border: 1px solid transparent;
     border-radius: 3px;
@@ -11,24 +11,24 @@
     line-height: 0;
 }
 
-.wpshuttle-page-template:hover label {
+.wpshuttle-page-layout:hover label {
     border: 1px solid #c1c1c1;
 }
 
-.wpshuttle-page-template img {
+.wpshuttle-page-layout img {
     max-width: 90px;
     height: auto;
 }
 
-.wpshuttle-page-template input[type=radio] {
+.wpshuttle-page-layout input[type=radio] {
     display: none;
 }
 
-.wpshuttle-page-template input[type=radio]:checked + label {
+.wpshuttle-page-layout input[type=radio]:checked + label {
     border: 1px solid #c1c1c1;
 }
 
-.wpshuttle-page-template span {
+.wpshuttle-page-layout span {
     z-index: 1000;
     position: absolute;
     top: 115px;
@@ -48,7 +48,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.wpshuttle-page-template span:before {
+.wpshuttle-page-layout span:before {
     content: '';
     position: absolute;
     left: 50%;
@@ -60,7 +60,7 @@
     border-bottom: 5px solid rgba(0,0,0,0.75);
 }
 
-.wpshuttle-page-template:hover span {
+.wpshuttle-page-layout:hover span {
     opacity: 1;
     visibility: visible;
     top: 95px;
