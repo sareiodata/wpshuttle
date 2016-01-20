@@ -691,11 +691,27 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+#masthead{
+	padding: 0 5%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display:flex;
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+}
+
+.site-branding{
+	flex-grow: 1;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	margin-top:1rem;
 }
 
 .main-navigation ul {
@@ -710,18 +726,41 @@ a:active {
 	position: relative;
 }
 
+.main-navigation li:last-child {
+
+}
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 1em;
+	border: 1px solid #c1c1c1;
+	margin-left: -1px;
+}
+
+.main-navigation a:hover {
+	background: #f1f1f1;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 3.6em;
 	left: -999em;
 	z-index: 99999;
+	background: #fff;
+}
+
+.main-navigation ul ul a {
+	margin-top:-1px;
+}
+
+.main-navigation ul ul ul li:first-child {
+
+}
+
+.main-navigation ul ul li:last-child {
+
 }
 
 .main-navigation ul ul ul {
