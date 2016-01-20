@@ -143,6 +143,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load page templates
+ * Load page layouts
  */
-require get_template_directory() . '/inc/page-templates.php';
+require get_template_directory() . '/inc/page-layouts.php';
