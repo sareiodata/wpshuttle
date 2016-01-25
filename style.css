@@ -606,25 +606,23 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	background: #1a1a1a;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.046875em;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: 0.84375em 0.875em 0.78125em;
+	text-transform: uppercase;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	background: #007acc;
 }
 
 button:focus,
@@ -635,8 +633,8 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	outline: thin dotted;
+	outline-offset: -4px;
 }
 
 input[type="text"],
@@ -1054,6 +1052,13 @@ a:active {
 	list-style-type: circle;
 }
 
+.widget button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"]{
+	padding: 0.5em 0.5em 0.5em;
+}
+
 
 /*--------------------------------------------------------------
 # Content
@@ -1268,6 +1273,10 @@ blockquote.alignright{
 	display: block;
 }
 
+.comments-area .comments-title{
+	color: #989898;
+}
+
 .comment-list,
 .comment-list ol.children{
 	list-style-type: none;
@@ -1310,16 +1319,68 @@ blockquote.alignright{
 }
 
 a.comment-reply-link{
-	font-size: 0.75em;
-	font-weight: 600;
-	color: #fff;
-	padding: 0.3rem;
-	text-transform: uppercase;
-	background: #c1c1c1;
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	color: #007acc;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1;
+	margin-top: 2.1538461538em;
+	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
 
-a.comment-reply-link:hover{
-	background: #007acc;
+a.comment-reply-link:hover,
+a.comment-reply-link:focus{
+	border-color: currentColor;
+	color: #007acc;
+	outline: 0;
+}
+
+.comment-form{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.comment-respond .comment-notes,
+.comment-respond .comment-form-comment,
+.comment-respond .form-submit
+{
+	flex-basis: 100%;
+}
+
+.comment-respond .comment-form-comment textarea{
+	box-sizing: border-box;
+}
+
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-url
+{
+	box-sizing: border-box;
+	flex-basis: 31.33%;
+}
+
+.comment-respond .comment-form-email{
+	box-sizing: border-box;
+	flex-basis: 31.33%;
+	margin-left:3%;
+	margin-right: 3%;
+}
+
+.comment-respond .comment-form-author input,
+.comment-respond .comment-form-email input,
+.comment-respond .comment-form-url input
+{
+	width: 100%;
+}
+
+.comment-respond label{
+	display: block;
+}
+
+.comment-respond .form-submit{
+
 }
 /*--------------------------------------------------------------
 # Infinite scroll
