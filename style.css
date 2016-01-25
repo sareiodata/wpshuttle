@@ -918,27 +918,74 @@ a:active {
 	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+.pagination{
+	margin-bottom: 4rem;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.pagination .nav-links .page-numbers{
+	font-weight: 700;
+	margin: 0 1rem;
+	padding: 0.7rem 1rem;
+	background: #f1f1f1;
+	border-radius: 2px;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
+.nav-links .page-numbers:nth-child(1){
+	margin-left: 0;
+}
+
+.pagination .nav-links {
+	display: flex;
+}
+
+.pagination .nav-links .prev{
+	flex-basis: 20%;
+	margin-left:0;
+}
+
+.pagination .nav-links .next{
+	flex-basis: 20%;
 	text-align: right;
-	width: 50%;
+	margin-right:0;
 }
+
+.nav-links .nav-previous,
+.nav-links .nav-next
+{
+
+}
+
+@media screen and (max-width: 37.5em) {
+	.pagination .nav-links .page-numbers{
+		display: none;
+	}
+
+	.pagination .nav-links .page-numbers.prev,
+	.pagination .nav-links .page-numbers.next,
+	.pagination .nav-links .page-numbers.current
+	{
+		display: inline;
+	}
+
+	.pagination .meta-nav.screen-reader-text{
+		clip: inherit;
+		height: auto;
+		overflow: hidden;
+		position: static !important;
+		width: auto;
+	}
+
+	.pagination .nav-links .page-numbers.prev,
+	.pagination .nav-links .page-numbers.next{
+		flex-basis: 28%;
+	}
+
+	.pagination .nav-links .page-numbers.current{
+		flex-grow: 1;
+		text-align: center;
+	}
+}
+
 /*--------------------------------------------------------------
 # Site Footer
 --------------------------------------------------------------*/
@@ -1056,7 +1103,8 @@ a:active {
 .widget input[type="button"],
 .widget input[type="reset"],
 .widget input[type="submit"]{
-	padding: 0.5em 0.5em 0.5em;
+	padding: 0.55rem 0.8rem;
+	font-size: 0.8rem;
 }
 
 
@@ -1324,11 +1372,10 @@ a.comment-reply-link{
 	color: #007acc;
 	display: inline-block;
 	font-family: sans-serif;
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 0.81rem;
 	line-height: 1;
-	margin-top: 2.1538461538em;
-	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
+	margin-top: 2.15em;
+	padding: 0.53em 0.53em 0.46em;
 }
 
 a.comment-reply-link:hover,

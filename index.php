@@ -40,7 +40,12 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			// Previous/next page navigation.
+			the_posts_pagination( array(
+				'prev_text'          => __( '    &#10094; Prev <span class="screen-reader-text">Previous page</span>', 'twentysixteen' ),
+				'next_text'          => __( '<span class="screen-reader-text">Next page</span> Next &#10095;', 'twentysixteen' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+			) );
 
 		else :
 
