@@ -1248,6 +1248,7 @@ blockquote.alignright{
 
 
 
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -1267,6 +1268,59 @@ blockquote.alignright{
 	display: block;
 }
 
+.comment-list,
+.comment-list ol.children{
+	list-style-type: none;
+}
+
+.comment-list li.comment{
+	border:1px solid #c1c1c1;
+	padding: 1em;
+	margin-top:-1px;
+}
+
+.comment-content{
+	clear: both;
+}
+
+.comment-author img.avatar{
+	float:left;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+
+.comment-metadata{
+	font-size: 0.8em;
+}
+
+.comment-metadata a{
+	color: #989898;
+}
+
+.comment-metadata a:hover{
+	color: #007acc;
+}
+
+.comments-area .reply{
+	text-align: right;
+}
+
+.comments-area .parent .reply{
+	margin-bottom: 1rem;
+}
+
+a.comment-reply-link{
+	font-size: 0.75em;
+	font-weight: 600;
+	color: #fff;
+	padding: 0.3rem;
+	text-transform: uppercase;
+	background: #c1c1c1;
+}
+
+a.comment-reply-link:hover{
+	background: #007acc;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
