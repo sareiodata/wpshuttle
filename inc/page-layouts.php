@@ -70,6 +70,65 @@ function wpshuttle_get_post_page_layout() {
 }
 
 
+/**
+ * HTML output for the Layout Elements modal box
+ *
+ */
+function wpshuttle_page_layout_elements_modal() {
+
+    echo '<div id="wpshuttle-layout-elements" style="display: none;">';
+
+        // Columns title
+        echo '<h2>Columns</h2>';
+
+        // 2 columns
+        echo '<h4>Row with 2 Columns</h4>';
+
+        echo '<code style="display: block;">';
+            echo '&lt;div class="grid grid-gutters"&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+            echo '&lt;/div&gt;';
+        echo '</code>';
+
+        // 3 columns
+        echo '<h4>Row with 3 Columns</h4>';
+
+        echo '<code style="display: block;">';
+            echo '&lt;div class="grid grid-gutters"&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+            echo '&lt;/div&gt;';
+        echo '</code>';
+
+        // 4 columns
+        echo '<h4>Row with 4 columns</h4>';
+
+        echo '<code style="display: block;">';
+            echo '&lt;div class="grid grid-gutters"&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;' . '&lt;div class="grid-cell"&gt;&lt;/div&gt;' . '<br />';
+            echo '&lt;/div&gt;';
+        echo '</code>';
+
+
+        // Columns title
+        echo '<h2>Button Link</h2>';
+
+        echo '<code style="display: block;">';
+            echo '&lt;a href="#" class="button"&gt;';
+            echo '&lt;/a&gt;';
+        echo '</code>';
+
+    echo '</div>';
+
+}
+add_action( 'admin_footer', 'wpshuttle_page_layout_elements_modal' );
+
+
 /*
  * Output for the layout meta box in the admin area
  *
@@ -83,6 +142,8 @@ function wpshuttle_page_layouts_meta_box_output( $post ) {
     $saved_page_layout = get_post_meta( $post->ID, 'wpshuttle_page_layout', true );
 
     // Display available layouts
+    echo '<h4>Select page layout:</h4>';
+
     if( !empty( $page_layouts ) ) {
         foreach( $page_layouts as $key => $page_layout ) {
             echo '<div class="wpshuttle-page-layout">';
@@ -98,6 +159,12 @@ function wpshuttle_page_layouts_meta_box_output( $post ) {
             echo '</div>';
         }
     }
+
+    echo '<hr style="border: 0; border-bottom: 1px dashed #d1d1d1; margin-top: 1.5em;" />';
+
+    // Layout elements
+    echo '<h4>Layout elements:</h4>';
+    echo '<a class="button button-secondary thickbox" href="#TB_inline?width=750&height=575&inlineId=wpshuttle-layout-elements">View layout elements</a>';
 
 }
 
