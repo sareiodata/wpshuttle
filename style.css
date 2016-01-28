@@ -1137,11 +1137,12 @@ a:active {
 	 font-size: 2.5rem;
 	 line-height: 1.225;
 	 margin-top:0;
-	 margin-bottom: 1.05em;
+	 margin-bottom: 0;
  }
 
 .entry-title a{
 	color: #1a1a1a;
+	color: #484848;
 	text-decoration: none;
 }
 
@@ -1318,7 +1319,19 @@ blockquote.alignright{
 	margin: 0 0 1.5em;
 }
 
+.entry-meta,
+.entry-footer{
+	font-size: 0.9rem;
+	color: #a1a1a1;
+}
+.entry-meta a,
+.entry-footer a{
+	color: #a1a1a1;
+}
 
+.page-header .page-title{
+	margin-top: 0;
+}
 
 
 /*--------------------------------------------------------------
