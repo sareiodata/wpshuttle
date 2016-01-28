@@ -559,6 +559,8 @@ td {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site-header,
+.site-footer,
 .site-content {
     box-sizing: content-box;
     margin-left: auto;
@@ -568,10 +570,16 @@ td {
 
 @media all and ( min-width : 55em ) {
 
+    body.boxed .site-header,
+	body.boxed-sidebar-left .site-header,
+	body.boxed-sidebar-right .site-header,
+    body.boxed .site-footer,
+	body.boxed-sidebar-left .site-footer,
+	body.boxed-sidebar-right .site-footer,
     body.boxed .site-content,
     body.boxed-sidebar-left .site-content,
     body.boxed-sidebar-right .site-content {
-        max-width: 1020px;
+        max-width: 1200px;
     }
 
     body.boxed-sidebar-left #primary {
@@ -778,8 +786,10 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.wpswrap{
+	background: #f4f4f4;
+}
 #masthead{
-	padding: 0 5%;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -791,7 +801,6 @@ a:active {
 	justify-content: flex-end;
 
 	margin-bottom: 1.75rem;
-	border-bottom: 1px solid #c1c1c1;
 }
 
 .site-branding{
@@ -1000,9 +1009,9 @@ a:active {
 # Site Footer
 --------------------------------------------------------------*/
 .site-footer{
-	padding: 1.75rem 5%;
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
 	margin-top: 1.75rem;
-	border-top: 1px solid #c1c1c1;
 }
 /*--------------------------------------------------------------
 # Accessibility
