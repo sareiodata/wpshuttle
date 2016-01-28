@@ -1,6 +1,6 @@
 /*
 Theme Name: WP Shuttle
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/sareiodata/wpshuttle/
 Author: Cristian Antohe
 Author URI: http://www.cozmoslabs.com
 Description: A simple WordPress theme with opinions on how much CSS should come with a framework.
@@ -32,6 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Navigation
 	## Links
 	## Menus
+	## Site Footer
 # Accessibility
 # Alignments
 # Clearings
@@ -153,7 +154,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em 0;
 }
 
 hr {
@@ -364,7 +365,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #1a1a1a;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -428,7 +429,9 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
+	background: #007acc;
+	color: #fff;
+	padding: 0.125em 0.25em;
 	text-decoration: none;
 }
 
@@ -474,15 +477,16 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0;
+	padding: 0;
 }
 
 ul {
-	list-style: disc;
+	list-style: disc inside;
 }
 
 ol {
-	list-style: decimal;
+	list-style: decimal inside;
 }
 
 li > ul,
@@ -491,24 +495,66 @@ li > ol {
 	margin-left: 1.5em;
 }
 
+dl {
+	margin: 0 0 1.75em;
+}
+
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 0 1.75em;
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+	vertical-align: middle;
+}
+
+del {
+	opacity: 0.8;
+}
+
+table,
+th,
+td {
+	border: 1px solid #d1d1d1;
 }
 
 table {
-	margin: 0 0 1.5em;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 1.75em;
+	table-layout: fixed;
+	/* Prevents HTML tables from becoming too wide */
 	width: 100%;
 }
 
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+}
+
+th,
+td {
+	padding: 0.4375em;
+}
 
 /*--------------------------------------------------------------
 # Layouts
@@ -561,8 +607,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-    display: inline-block;
-    border: 0;
+	display: inline-block;
+	border: 0;
 	border-radius: 3px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, .8);
@@ -572,7 +618,7 @@ a.button {
 }
 
 a.button {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 button:hover,
@@ -584,8 +630,8 @@ a.button:hover {
 }
 
 a.button:hover {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 button:focus,
@@ -675,11 +721,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #007acc;
+	text-decoration: none;
 }
 
 a:visited {
-	color: purple;
+	color: #007acc;
 }
 
 a:hover,
@@ -695,6 +742,37 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+	color: #686868;
+	text-decoration: none;
+}
+
+.entry-content a,
+.entry-summary a,
+.taxonomy-description a,
+.logged-in-as a,
+.comment-content a,
+.pingback .comment-body > a,
+.textwidget a,
+.entry-footer a:hover,
+.site-info a:hover {
+	box-shadow: 0 1px 0 0 currentColor;
+}
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus,
+.taxonomy-description a:hover,
+.taxonomy-description a:focus,
+.logged-in-as a:hover,
+.logged-in-as a:focus,
+.comment-content a:hover,
+.comment-content a:focus,
+.pingback .comment-body > a:hover,
+.pingback .comment-body > a:focus,
+.textwidget a:hover,
+.textwidget a:focus {
+	box-shadow: none;
 }
 
 /*--------------------------------------------------------------
@@ -711,16 +789,38 @@ a:active {
 	-webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
 	justify-content: flex-end;
+
+	margin-bottom: 1.75rem;
+	border-bottom: 1px solid #c1c1c1;
 }
 
 .site-branding{
 	flex-grow: 1;
+	align-content: center;
+}
+
+.site-title{
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height:  1.21739;
+	margin-top: 1rem;
+	margin-bottom: 0rem;
+}
+
+.site-title a{
+	text-decoration: none;
+}
+
+.site-description{
+	font-size: 0.8rem;
+	color: #686868;
+	margin-top: 0;
 }
 
 .main-navigation {
 	clear: both;
 	display: block;
-	margin-top:1rem;
+	margin:1rem 0;
 }
 
 .main-navigation ul {
@@ -828,28 +928,82 @@ a:active {
 	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+.pagination{
+	margin-bottom: 4rem;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.pagination .nav-links .page-numbers{
+	font-weight: 700;
+	margin: 0 1rem;
+	padding: 0.7rem 1rem;
+	background: #f1f1f1;
+	border-radius: 2px;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
+.nav-links .page-numbers:nth-child(1){
+	margin-left: 0;
+}
+
+.pagination .nav-links {
+	display: flex;
+}
+
+.pagination .nav-links .prev{
+	flex-basis: 20%;
+	margin-left:0;
+}
+
+.pagination .nav-links .next{
+	flex-basis: 20%;
 	text-align: right;
-	width: 50%;
+	margin-right:0;
 }
 
+.nav-links .nav-previous,
+.nav-links .nav-next
+{
+
+}
+
+@media screen and (max-width: 37.5em) {
+	.pagination .nav-links .page-numbers{
+		display: none;
+	}
+
+	.pagination .nav-links .page-numbers.prev,
+	.pagination .nav-links .page-numbers.next,
+	.pagination .nav-links .page-numbers.current
+	{
+		display: inline;
+	}
+
+	.pagination .meta-nav.screen-reader-text{
+		clip: inherit;
+		height: auto;
+		overflow: hidden;
+		position: static !important;
+		width: auto;
+	}
+
+	.pagination .nav-links .page-numbers.prev,
+	.pagination .nav-links .page-numbers.next{
+		flex-basis: 28%;
+	}
+
+	.pagination .nav-links .page-numbers.current{
+		flex-grow: 1;
+		text-align: center;
+	}
+}
+
+/*--------------------------------------------------------------
+# Site Footer
+--------------------------------------------------------------*/
+.site-footer{
+	padding: 1.75rem 5%;
+	margin-top: 1.75rem;
+	border-top: 1px solid #c1c1c1;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -943,6 +1097,7 @@ a:active {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
+	font-size: 0.9rem;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -950,18 +1105,187 @@ a:active {
 	max-width: 100%;
 }
 
+.widget ul{
+	list-style-type: circle;
+}
+
+.widget button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"]{
+	padding: 0.55rem 0.8rem;
+	font-size: 0.8rem;
+}
+
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.entry-title {
+	 font-size: 2.5rem;
+	 line-height: 1.225;
+	 margin-top:0;
+	 margin-bottom: 1.05em;
+ }
+
+.entry-title a{
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+.entry-title a:hover{
+	color: #007acc;
+	text-decoration: none;
+}
+
+.entry-content,
+.entry-summary {
+	border-color: #d1d1d1;
+}
+
+.entry-content h1,
+.entry-summary h1,
+.comment-content h1,
+.textwidget h1 {
+	font-size: 2rem;
+	line-height: 1.25;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.entry-content h2,
+.entry-summary h2,
+.comment-content h2,
+.textwidget h2 {
+	font-size: 1.6rem;
+	line-height: 1.2;
+	margin-top: 2.45em;
+	margin-bottom: 1.2em;
+}
+
+.entry-content h3,
+.entry-summary h3,
+.comment-content h3,
+.textwidget h3 {
+	font-size: 1.3rem;
+	line-height: 1.1;
+	margin-top: 2.95em;
+	margin-bottom: 1.5em;
+}
+
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6,
+.textwidget h4,
+.textwidget h5,
+.textwidget h6 {
+	font-size: 1rem;
+	line-height: 1.3125;
+	margin-top: 3.5em;
+	margin-bottom: 1.75em;
+}
+
+.entry-content h4,
+.entry-summary h4,
+.comment-content h4,
+.textwidget h4 {
+	letter-spacing: 0.140625em;
+	text-transform: uppercase;
+}
+
+.entry-content h6,
+.entry-summary h6,
+.comment-content h6,
+.textwidget h6 {
+	font-style: italic;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h1,
+.entry-summary h2,
+.entry-summary h3,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.comment-content h1,
+.comment-content h2,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6,
+.textwidget h1,
+.textwidget h2,
+.textwidget h3,
+.textwidget h4,
+.textwidget h5,
+.textwidget h6 {
+	font-weight: 900;
+}
+
+.entry-content h1:first-child,
+.entry-content h2:first-child,
+.entry-content h3:first-child,
+.entry-content h4:first-child,
+.entry-content h5:first-child,
+.entry-content h6:first-child,
+.entry-summary h1:first-child,
+.entry-summary h2:first-child,
+.entry-summary h3:first-child,
+.entry-summary h4:first-child,
+.entry-summary h5:first-child,
+.entry-summary h6:first-child,
+.comment-content h1:first-child,
+.comment-content h2:first-child,
+.comment-content h3:first-child,
+.comment-content h4:first-child,
+.comment-content h5:first-child,
+.comment-content h6:first-child,
+.textwidget h1:first-child,
+.textwidget h2:first-child,
+.textwidget h3:first-child,
+.textwidget h4:first-child,
+.textwidget h5:first-child,
+.textwidget h6:first-child {
+	margin-top: 0;
+}
+
+blockquote {
+	border-left: 4px solid #1a1a1a;
+	color: #686868;
+	font-size: 1.2rem;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 0 0 1.5em;
+	padding: 0 1.25em;
+}
+
+blockquote.alignleft,
+blockquote.alignright{
+	border-top: 4px solid #1a1a1a;
+	border-left: 0;
+	width: 35%;
+}
+
 .sticky {
 	display: block;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 7em;
 }
 
 .byline,
@@ -985,6 +1309,9 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+
+
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -1004,6 +1331,114 @@ a:active {
 	display: block;
 }
 
+.comments-area .comments-title{
+	color: #989898;
+}
+
+.comment-list,
+.comment-list ol.children{
+	list-style-type: none;
+}
+
+.comment-list li.comment{
+	border:1px solid #c1c1c1;
+	padding: 1em;
+	margin-top:-1px;
+}
+
+.comment-content{
+	clear: both;
+}
+
+.comment-author img.avatar{
+	float:left;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+
+.comment-metadata{
+	font-size: 0.8em;
+}
+
+.comment-metadata a{
+	color: #989898;
+}
+
+.comment-metadata a:hover{
+	color: #007acc;
+}
+
+.comments-area .reply{
+	text-align: right;
+}
+
+.comments-area .parent .reply{
+	margin-bottom: 1rem;
+}
+
+a.comment-reply-link{
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	color: #007acc;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 0.81rem;
+	line-height: 1;
+	margin-top: 2.15em;
+	padding: 0.53em 0.53em 0.46em;
+}
+
+a.comment-reply-link:hover,
+a.comment-reply-link:focus{
+	border-color: currentColor;
+	color: #007acc;
+	outline: 0;
+}
+
+.comment-form{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.comment-respond .comment-notes,
+.comment-respond .comment-form-comment,
+.comment-respond .form-submit
+{
+	flex-basis: 100%;
+}
+
+.comment-respond .comment-form-comment textarea{
+	box-sizing: border-box;
+}
+
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-url
+{
+	box-sizing: border-box;
+	flex-basis: 31.33%;
+}
+
+.comment-respond .comment-form-email{
+	box-sizing: border-box;
+	flex-basis: 31.33%;
+	margin-left:3%;
+	margin-right: 3%;
+}
+
+.comment-respond .comment-form-author input,
+.comment-respond .comment-form-email input,
+.comment-respond .comment-form-url input
+{
+	width: 100%;
+}
+
+.comment-respond label{
+	display: block;
+}
+
+.comment-respond .form-submit{
+
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1053,6 +1488,13 @@ object {
 
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
+
+	color: #686868;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.61538;
+	padding-top: 0.538462em;
+
 }
 
 .wp-caption-text {
