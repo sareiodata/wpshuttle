@@ -12,7 +12,7 @@
 }
 
 .wpshuttle-page-layout:hover label {
-    border: 1px solid #c1c1c1;
+    border: 1px solid #111;
 }
 
 .wpshuttle-page-layout img {
@@ -25,7 +25,7 @@
 }
 
 .wpshuttle-page-layout input[type=radio]:checked + label {
-    border: 1px solid #c1c1c1;
+    border: 1px solid #111;
 }
 
 .wpshuttle-page-layout span {

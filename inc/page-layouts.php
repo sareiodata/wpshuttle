@@ -149,7 +149,7 @@ add_action( 'save_post', 'wpshuttle_page_layouts_meta_box_save' );
  */
 function wpshuttle_page_layouts_meta_box_init() {
 
-    add_meta_box( 'wpshuttle_page_layouts', 'Page Layout', 'wpshuttle_page_layouts_meta_box_output', array_merge( array( 'post', 'page' ), get_post_types( array( '_builtin' => false ) ) ) );
+    add_meta_box( 'wpshuttle_page_layouts', 'Page Layout', 'wpshuttle_page_layouts_meta_box_output', array_merge( array( 'post', 'page' ), get_post_types( array( '_builtin' => false ) ) ), 'side' );
 
 }
 add_action( 'add_meta_boxes', 'wpshuttle_page_layouts_meta_box_init' );
